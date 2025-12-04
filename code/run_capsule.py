@@ -43,8 +43,7 @@ if __name__ == "__main__":
     dataset = data_qc.dataset(parsed_args.data_path)
 
     runner = data_qc._run_tests(dataset)
-    results = runner.run_all_with_progress()
-    qc_json = to_ads(results, parsed_args)
+    qc_json = to_ads(runner, parsed_args)
     if parsed_args.qc_json_path is not None:
         with open(parsed_args.qc_json_path / "quality_control.json", "w", encoding="utf-8") as f:
             f.write(qc_json.model_dump_json(indent=2))

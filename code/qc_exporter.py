@@ -68,7 +68,7 @@ def result_to_qc_metric(
         value=convert_numpy_to_python_data_type(result.result),
         status_history=[status],
         reference=_resolve_reference(result, asset_root) if create_assets else None,
-        modality=Modality.BEHAVIOR,
+        modality=Modality.FIB,
         stage=Stage.PROCESSING,
         tags=tags
     )
