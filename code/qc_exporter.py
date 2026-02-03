@@ -62,6 +62,15 @@ def result_to_qc_metric(
         evaluator=EVALUATOR, status=status_converter[result.status], timestamp=NOW
     )
 
+    if tag_key == "Dataset tests" or tag_key == "Contract tests":
+        tags={
+            "Dataset_Contract": tag_key
+        }
+    else:
+        tags={
+            "Channel": tag_key
+        }
+
     return QCMetric(
         name=f"{result.suite_name}::{result.test_name}",
         description=f"Test: {result.description} // Message: {result.message}",
@@ -70,9 +79,7 @@ def result_to_qc_metric(
         reference=_resolve_reference(result, asset_root) if create_assets else None,
         modality=Modality.FIB,
         stage=Stage.PROCESSING,
-        tags={
-            tag_key: tag_value
-        }
+        tags=tags
     )
 
 
@@ -113,13 +120,8 @@ def to_ads(
             metrics = [m for m in metrics if m is not None]
             qc_metrics.extend(metrics)
 
-    qc_tags = ["Modality"]
-    for metric in qc_metrics:
-        for tag in metric.tags:
-            if tag not in qc_tags:
-                qc_tags.append(tag)
 
-    return QualityControl(metrics=qc_metrics, default_grouping=[(tuple(qc_tags))])
+    return QualityControl(metrics=qc_metrics, default_grouping=["modality", ("Dataset_Contract", "Channel")])
 
 
 class QCCli(data_qc.DataQcCli):
