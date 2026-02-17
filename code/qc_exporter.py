@@ -78,7 +78,7 @@ def result_to_qc_metric(
         status_history=[status],
         reference=_resolve_reference(result, asset_root) if create_assets else None,
         modality=Modality.FIB,
-        stage=Stage.PROCESSING,
+        stage=Stage.RAW,
         tags=tags
     )
 
