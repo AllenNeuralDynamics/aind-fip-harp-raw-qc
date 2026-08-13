@@ -92,7 +92,7 @@ requires-dist = [
     { name = "aind-data-schema", specifier = ">=2.0" },
     { name = "aind-physiology-fip" },
     { name = "contraqctor", specifier = ">=0.5.3" },
-    { name = "log-schema" },
+    { name = "log-schema", specifier = "==0.2.10.dev1" },
     { name = "pydantic-settings", specifier = ">=2.10.1" },
     { name = "watchtower" },
 ]
