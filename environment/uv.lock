@@ -41,6 +41,18 @@ wheels = [
 ]
 
 [[package]]
+name = "aind-contraqctor-to-schema-export"
+version = "0.1.1"
+source = { git = "https://github.com/AllenNeuralDynamics/aind-contraqctor-to-schema-export.git?rev=v0.1.1#2e329967e1f997cc5ac9ca489afcd996f3e49f51" }
+dependencies = [
+    { name = "aind-data-schema" },
+    { name = "aind-data-schema-models" },
+    { name = "contraqctor" },
+    { name = "matplotlib" },
+    { name = "numpy" },
+]
+
+[[package]]
 name = "aind-data-schema"
 version = "2.9.0"
 source = { registry = "https://pypi.org/simple" }
@@ -74,11 +86,9 @@ name = "aind-fip-harp-primary-qc"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "aind-data-schema" },
+    { name = "aind-contraqctor-to-schema-export" },
     { name = "aind-physiology-fip" },
-    { name = "contraqctor" },
     { name = "log-schema" },
-    { name = "pydantic-settings" },
     { name = "watchtower" },
 ]
 
@@ -89,11 +99,9 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "aind-data-schema", specifier = ">=2.0" },
-    { name = "aind-physiology-fip" },
-    { name = "contraqctor", specifier = ">=0.5.3" },
+    { name = "aind-contraqctor-to-schema-export", git = "https://github.com/AllenNeuralDynamics/aind-contraqctor-to-schema-export.git?rev=v0.1.1" },
+    { name = "aind-physiology-fip", specifier = ">=0.4.0" },
     { name = "log-schema", specifier = "==0.2.10.dev1" },
-    { name = "pydantic-settings", specifier = ">=2.10.1" },
     { name = "watchtower" },
 ]
 
@@ -102,14 +110,14 @@ dev = [{ name = "ruff" }]
 
 [[package]]
 name = "aind-physiology-fip"
-version = "0.3.0"
+version = "0.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aind-behavior-services" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/7f/3a/70ea88a5c780fbeb06db352f130e6587a779db14901cf9e0d7ed08f16661/aind_physiology_fip-0.3.0.tar.gz", hash = "sha256:7375a6999db73b44ef0b424342ee1571cb0d47481677b2fa1fd57493ea54ae25", size = 18189, upload-time = "2026-02-02T23:06:22.961Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/9e/a2/b7c9097ae26f9573f11470798afa3432aa7958d55e771dc5ee6510d839e5/aind_physiology_fip-0.4.0.tar.gz", hash = "sha256:88ca39425e4f58bbaad168db56fffbc4b26f763c8e1ff87da3f5692892279a8f", size = 21440, upload-time = "2026-10-30T04:43:07.483Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/51/55/d7597b623f35ca09e3855162719bf926183057d2cc9d00d8b79e72020b61/aind_physiology_fip-0.3.0-py3-none-any.whl", hash = "sha256:d633bf442b016c393e2147ff9d0d8208724c197ded7128e5e2764721e43252fe", size = 22284, upload-time = "2026-02-02T23:06:21.725Z" },
+    { url = "https://files.pythonhosted.org/packages/e8/07/ca1cee3f48df3d20fd8529297c55d40c08882aa8528b471ababf8e27a39e/aind_physiology_fip-0.4.0-py3-none-any.whl", hash = "sha256:b354908ecf3588a2ab3cbf0ed7eefa27f73eb2787c39aad6462dda9efa8e91d0", size = 24510, upload-time = "2026-10-30T04:43:06.231Z" },
 ]
 
 [[package]]
