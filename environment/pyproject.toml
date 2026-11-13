@@ -5,10 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "aind-physiology-fip",
-    "aind-data-schema>=2.0",
-    "pydantic-settings>=2.10.1",
-    "contraqctor>=0.5.3",
+    "aind-physiology-fip>=0.4.0",
+    "aind-contraqctor-to-schema-export @ git+https://github.com/AllenNeuralDynamics/aind-contraqctor-to-schema-export.git@v0.1.1",
     "log-schema==0.2.10.dev1",
     "watchtower"
 ]
