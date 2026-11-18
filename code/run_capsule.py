@@ -27,15 +27,10 @@ def run() -> None:
     Entrypoint for executing
     """
     settings = InputSettings()
-    paths = tuple(settings.input_directory.glob("fib/*"))
+    paths = tuple(settings.input_directory.glob("fib/fip*"))
     primary_data_path = [path for path in paths if path.is_dir()]
     if not primary_data_path:
         raise FileNotFoundError("No primary data asset attached")
-
-    if len(primary_data_path) > 1:
-        raise ValueError(
-            "Multiple primary data assets attached. Only single asset needed"
-        )
 
     with open(settings.input_directory / "data_description.json", "r") as f:
         data_description = json.load(f)
